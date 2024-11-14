@@ -26,4 +26,3 @@ func _input(_event):
 			Global.voice = voice
 			Global.text_queue = dialog.duplicate()	
 		Global.talking(_event)
-		
