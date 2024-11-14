@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://biuqtitcryngj"]
+
+[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://default_npc.tscn" id="1_ggshx"]
+[ext_resource type="Texture2D" uid="uid://bg4hsrqj65aju" path="res://art/charamter.png" id="2_so4pj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55874"]
+size = Vector2(24, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmgdw"]
+size = Vector2(24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8niyf"]
+atlas = ExtResource("2_so4pj")
+region = Rect2(616, 442, 154, 221)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x5yk"]
+atlas = ExtResource("2_so4pj")
+region = Rect2(770, 442, 154, 221)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76ely"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8niyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x5yk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="spaceman" instance=ExtResource("1_ggshx")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_55874")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_mmgdw")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+scale = Vector2(0.150974, 0.11595)
+sprite_frames = SubResource("SpriteFrames_76ely")
+frame = 1
+frame_progress = 0.110202

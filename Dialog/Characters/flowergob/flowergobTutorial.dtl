@@ -1,0 +1,23 @@
+join flowergob (portrait) leftmost
+join protaggy (Portrait) rightmost
+flowergob: Hey! Do you need to be shown the ropes?
+- yes
+	protaggy: yes please!
+	label explanation
+	flowergob: you can grow flowers down on that field. You started with five seeds! You can go plant them there, and wait for them to grow. You can sleep in the nearby bed to get to the next day. It takes a few days for them to mature.
+	flowergob: Once you have flowers, you can harvest them. Then, you can talk to me to sell them for a profit.
+	flowergob: And finally, once you have some money, you can buy more seeds from me! I'm a one stop shop baby!
+	flowergob: Any questions? (david s pumpkins voice)
+	- yes
+		protaggy: I'm confused (stupid idiot)
+		flowergob: Once more from the top!
+		jump explanation
+	- no
+		protaggy: No I'm smart
+		jump end
+- no
+	protaggy: No thanks!
+label end
+flowergob: Alright! Get to growin chump.
+set {tutorialized} = true
+[end_timeline]
