@@ -24,14 +24,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "flowergob": "res://Dialog/Characters/flowergob/flowergob.dch",
 "fuckjohnson": "res://Dialog/Characters/fuck johnson/fuckjohnson.dch",
-"protaggy": "res://Dialog/Characters/protaggy/protaggy.dch"
+"protaggy": "res://Dialog/Characters/protaggy/protaggy.dch",
+"spaceman": "res://Dialog/Characters/spaceman/spaceman.dch"
 }
 directories/dtl_directory={
 "flowergobBuying": "res://Dialog/Characters/flowergob/flowergobBuying.dtl",
 "flowergobDefault": "res://Dialog/Characters/flowergob/flowergobDefault.dtl",
 "flowergobSelling": "res://Dialog/Characters/flowergob/flowergobSelling.dtl",
 "flowergobTutorial": "res://Dialog/Characters/flowergob/flowergobTutorial.dtl",
-"fuckjohnsonDefault": "res://Dialog/Characters/fuck johnson/fuckjohnsonDefault.dtl"
+"fuckjohnsonDefault": "res://Dialog/Characters/fuck johnson/fuckjohnsonDefault.dtl",
+"spacemanDefault": "res://Dialog/Characters/spaceman/spacemanDefault.dtl"
 }
 layout/style_list=["res://Dialog/Styles/style.tres"]
 layout/default_style="res://Dialog/Styles/style.tres"
