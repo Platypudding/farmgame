@@ -3,7 +3,7 @@ extends Node
 var day = 1
 var flowers = 0
 var shmoney = 0
-var seeds = 5
+var seeds = 0
 var isTalking = false
 var callYN = false
 var voice
@@ -22,7 +22,6 @@ func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	isTalking = false
 	timeline = ""
-	print("talking end")
 
 #func _on_timeline_ended():
 #	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

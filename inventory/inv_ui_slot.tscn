@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr8qeyu71pb1t"]
+
+[ext_resource type="Script" path="res://Player/inv_ui_slot.gd" id="1_q58m2"]
+[ext_resource type="Texture2D" uid="uid://bj1lluidtcey2" path="res://art/UIStuffs/GUI/GUI_2x.png" id="2_q4m1e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnb7k"]
+font_size = 21
+font_color = Color(0.828282, 0.739634, 0, 1)
+
+[node name="inv_UI_slot" type="Panel"]
+script = ExtResource("1_q58m2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q4m1e")
+region_enabled = true
+region_rect = Rect2(256, 96, 32, 32)
+
+[node name="item_display" type="Sprite2D" parent="."]
+
+[node name="amount_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = -19.5
+offset_top = -1.8462
+offset_right = 39.5
+offset_bottom = 32.1538
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_lnb7k")
+horizontal_alignment = 2

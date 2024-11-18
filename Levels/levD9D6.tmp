@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmeu2e4hrb1gu"]
+[gd_scene load_steps=12 format=3 uid="uid://dmeu2e4hrb1gu"]
 
 [ext_resource type="Script" path="res://Levels/Global.gd" id="1_qp04q"]
 [ext_resource type="PackedScene" uid="uid://bnk3cijpn36nc" path="res://Player/Player.tscn" id="2_bgow7"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://v1g3jcb5a10c" path="res://inventory/items/Seed.tres" id="6_jfhr3"]
 [ext_resource type="PackedScene" uid="uid://csdocgc4sd4h4" path="res://flowergob.tscn" id="6_w58ac"]
 [ext_resource type="PackedScene" uid="uid://6ofql3e54376" path="res://spaceman.tscn" id="7_a5gs8"]
-[ext_resource type="Resource" uid="uid://ba1d388clw7gb" path="res://inventory/items/Flower.tres" id="7_skvqt"]
 [ext_resource type="PackedScene" uid="uid://1fn1a87da6hp" path="res://fuck_johnson.tscn" id="9_4edia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5isq"]
@@ -2088,7 +2087,6 @@ motion_mode = 1
 process_mode = 3
 position = Vector2(648, 264)
 seed = ExtResource("6_jfhr3")
-flower = ExtResource("7_skvqt")
 
 [node name="spaceman" parent="." instance=ExtResource("7_a5gs8")]
 process_mode = 3

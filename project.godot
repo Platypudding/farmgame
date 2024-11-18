@@ -76,7 +76,11 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Player/": "teal"
+"res://Dialog/": "blue",
+"res://Levels/": "purple",
+"res://Player/": "teal",
+"res://art/": "yellow",
+"res://inventory/": "red"
 }
 
 [input]

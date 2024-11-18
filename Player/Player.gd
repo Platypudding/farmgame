@@ -2,6 +2,7 @@
 
 extends CharacterBody2D
 @export var speed = 100
+@export var inv: Inv
 var sprintSpeed = speed * 2
 @onready var tilemap = get_parent().get_node("TileMap")
 @onready var gal = $PlayerSprite
@@ -79,10 +80,14 @@ func _physics_process(_delta):
 		get_input()
 		move_and_slide()
 		elevate()
-	
+
+func collect(item, amount):
+	inv.insert(item, amount)
+	print(amount)
 
 	
-	
-	
-	
-	
+func remove(item, amount):
+	inv.remove(item, amount)
+
+func itemcheck():
+	pass

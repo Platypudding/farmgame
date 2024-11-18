@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://j5s3mk2stl7m"]
+[gd_scene load_steps=11 format=3 uid="uid://j5s3mk2stl7m"]
 
 [ext_resource type="Texture2D" uid="uid://0j6g4ilmrqp1" path="res://art/full version/farming/crops.png" id="1_jl3sk"]
+[ext_resource type="Resource" uid="uid://ba1d388clw7gb" path="res://inventory/items/Flower.tres" id="3_f2nhe"]
+[ext_resource type="Resource" uid="uid://v1g3jcb5a10c" path="res://inventory/items/Seed.tres" id="3_oimwd"]
 [ext_resource type="Script" path="res://Levels/Flower.gd" id="4_vddnx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_katdq"]
@@ -50,6 +52,8 @@ sprite_frames = SubResource("SpriteFrames_kglad")
 animation = &"Flower"
 autoplay = "Flower"
 script = ExtResource("4_vddnx")
+seed = ExtResource("3_oimwd")
+flower = ExtResource("3_f2nhe")
 
 [node name="Area2D" type="Area2D" parent="."]
 
