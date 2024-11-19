@@ -4,6 +4,10 @@ extends Panel
 @onready var amount_text: Label = $amount_text
 
 func update(slot: InvSlot):
+	
+	if slot.amount <= 0:
+		slot.item = null
+	
 	if !slot.item:
 		item_visual.visible = false
 		amount_text.visible = false

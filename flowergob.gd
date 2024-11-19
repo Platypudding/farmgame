@@ -16,30 +16,31 @@ func _on_area_2d_body_exited(_body):
 
 
 func _input(_event):
-	if Global.isTalking == false: 
+	if _event.is_action_pressed("Action Butt") and Global.isTalking == false and is_reachable: 
+		var flowercheck = player.check(flower)
+		var seedcheck = player.check(seed)
 
-		if _event.is_action_pressed("Action Butt") and Global.flowers > 0 and is_reachable:
-			Global.shmoney = Global.shmoney + Global.flowers * 10
-			Global.flowers = 0
+		if flowercheck[0] == true:
+			
 			Global.timeline = "res://Dialog/Characters/flowergob/flowergobSelling.dtl"
-			player.remove(flower, 1)
+			player.remove(flower, flowercheck[1])
+			Global.shmoney = Global.shmoney + flowercheck[1] * 10
 			Global.talking(_event)
 		
-		elif _event.is_action_pressed("Action Butt") and Global.shmoney > 0 and is_reachable: 
-			Global.seeds = Global.seeds + 1
-			Global.shmoney = Global.shmoney - 5
+		elif Global.shmoney > 0: 
 			Global.timeline = "res://Dialog/Characters/flowergob/flowergobBuying.dtl"
 			Global.talking(_event)
-			player.collect(seed, 1)
+			player.collect(seed, Global.shmoney / 5)
+			Global.shmoney = 0
 	
-		elif _event.is_action_pressed("Action Butt") and is_reachable and Dialogic.VAR.tutorialized == false:
-			player.itemcheck()
+		elif Dialogic.VAR.tutorialized == false:
 			Global.timeline = "res://Dialog/Characters/flowergob/flowergobTutorial.dtl"
 			Global.talking(_event)
 			player.collect(seed, 5)
-			Global.seeds = Global.seeds + 5
 	
-		elif _event.is_action_pressed("Action Butt") and is_reachable:	
+		else:
+			print(player.check(flower, 0))
 			Global.timeline = "res://Dialog/Characters/flowergob/flowergobDefault.dtl"
 			Global.talking(_event)
+			
 			

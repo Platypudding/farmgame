@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_gicvt")
-name = ""
+name = "Flower"
 texture = ExtResource("2_d2f3b")

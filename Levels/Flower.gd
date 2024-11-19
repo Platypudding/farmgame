@@ -44,10 +44,9 @@ func _on_area_2d_body_exited(body):
 
 
 func _input(event):
-	if event.is_action_pressed("Action Butt") and isReachable and isSown == false and Global.seeds > 0:
+	if event.is_action_pressed("Action Butt") and isReachable and isSown == false and player.check(seed)[0] == true:
 		isSown = true
 		player.remove(seed, 1)
-		Global.seeds = Global.seeds - 1
 		phase = 2
 		localDays = Global.day
 	
