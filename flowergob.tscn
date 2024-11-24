@@ -23,13 +23,15 @@ animations = [{
 
 [node name="flowergob" instance=ExtResource("1_u38se")]
 script = ExtResource("2_3vdpb")
-dialog = ["Hey pal"]
+seed = null
+flower = null
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_jryqo")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ffq35")
 

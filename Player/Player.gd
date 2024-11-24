@@ -22,11 +22,17 @@ func get_input():
 		speed = sprintSpeed
 		if velocity.x or velocity.y:
 			gal.speed_scale = 2
-		
-		
+
 	else:
 		speed = sprintSpeed / 2
 		gal.speed_scale = 1
+	
+	if Input.is_action_just_pressed("plus"):
+		Global.day += 1
+			
+	if Input.is_action_just_pressed("minus"):
+		Global.day -= 1
+
 
 	if velocity.x > 0:
 		gal.play("walkinright")

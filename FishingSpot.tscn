@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://v5fj4x7u5u3g"]
+
+[ext_resource type="Script" path="res://FishingSpot.gd" id="1_01cls"]
+[ext_resource type="Texture2D" uid="uid://njv1lv2f1nv2" path="res://art/Objects/Fishing Spot.png" id="2_mj7do"]
+[ext_resource type="Resource" uid="uid://ntls2efmpx0v" path="res://inventory/items/Tuna.tres" id="2_plje4"]
+[ext_resource type="Resource" uid="uid://cmbrqqx4xr0gd" path="res://inventory/items/Catfish.tres" id="3_ggr7y"]
+[ext_resource type="Resource" uid="uid://hay8p1e6g5mc" path="res://inventory/items/Trash.tres" id="4_clnln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwtfa"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1h0dw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mj7do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q6uu"]
+size = Vector2(64, 16)
+
+[node name="FishingSpot" type="CharacterBody2D"]
+script = ExtResource("1_01cls")
+tuna = ExtResource("2_plje4")
+catfish = ExtResource("3_ggr7y")
+trash = ExtResource("4_clnln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hwtfa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1h0dw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3q6uu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ntls2efmpx0v"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_lmpfi"]
+[ext_resource type="Texture2D" uid="uid://cx2ocdsb5700u" path="res://art/item sprites/inventory tuna.png" id="2_4va6a"]
+
+[resource]
+script = ExtResource("1_lmpfi")
+name = "Tuna"
+texture = ExtResource("2_4va6a")
+itemnum = 200

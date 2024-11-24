@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://v1g3jcb5a10c"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cftb7m70aq0ww"]
 
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_ouvvs"]
-[ext_resource type="Texture2D" uid="uid://dev7fhyhpe3y2" path="res://art/item sprites/inventory seed.png" id="2_fq2cs"]
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_dhn81"]
+[ext_resource type="Texture2D" uid="uid://dev7fhyhpe3y2" path="res://art/item sprites/inventory seed.png" id="2_u2v52"]
 
 [resource]
-script = ExtResource("1_ouvvs")
+script = ExtResource("1_dhn81")
 name = "Seed"
-texture = ExtResource("2_fq2cs")
+texture = ExtResource("2_u2v52")
+itemnum = 2

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ba1d388clw7gb"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b8u31sux32rlk"]
 
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_gicvt"]
-[ext_resource type="Texture2D" uid="uid://bvnpu30bh7qqo" path="res://art/item sprites/inventory flower.png" id="2_d2f3b"]
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_6dyos"]
+[ext_resource type="Texture2D" uid="uid://bvnpu30bh7qqo" path="res://art/item sprites/inventory flower.png" id="2_pepac"]
 
 [resource]
-script = ExtResource("1_gicvt")
+script = ExtResource("1_6dyos")
 name = "Flower"
-texture = ExtResource("2_d2f3b")
+texture = ExtResource("2_pepac")
+itemnum = 1

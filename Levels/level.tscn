@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmeu2e4hrb1gu"]
+[gd_scene load_steps=14 format=3 uid="uid://dmeu2e4hrb1gu"]
 
 [ext_resource type="Script" path="res://Levels/Global.gd" id="1_qp04q"]
 [ext_resource type="PackedScene" uid="uid://bnk3cijpn36nc" path="res://Player/Player.tscn" id="2_bgow7"]
 [ext_resource type="PackedScene" uid="uid://ps55plxrlym3" path="res://bed.tscn" id="3_d4kwv"]
 [ext_resource type="PackedScene" uid="uid://j5s3mk2stl7m" path="res://Levels/Flower.tscn" id="3_u6e66"]
 [ext_resource type="Texture2D" uid="uid://cteqr2j68m1es" path="res://art/full version/tiles/tiles.png" id="4_r5aq0"]
-[ext_resource type="Resource" uid="uid://v1g3jcb5a10c" path="res://inventory/items/Seed.tres" id="6_jfhr3"]
+[ext_resource type="Resource" uid="uid://cftb7m70aq0ww" path="res://inventory/items/Seed.tres" id="6_jfhr3"]
 [ext_resource type="PackedScene" uid="uid://csdocgc4sd4h4" path="res://flowergob.tscn" id="6_w58ac"]
 [ext_resource type="PackedScene" uid="uid://6ofql3e54376" path="res://spaceman.tscn" id="7_a5gs8"]
-[ext_resource type="Resource" uid="uid://ba1d388clw7gb" path="res://inventory/items/Flower.tres" id="7_skvqt"]
+[ext_resource type="Resource" uid="uid://b8u31sux32rlk" path="res://inventory/items/Flower.tres" id="7_skvqt"]
 [ext_resource type="PackedScene" uid="uid://1fn1a87da6hp" path="res://fuck_johnson.tscn" id="9_4edia"]
+[ext_resource type="PackedScene" uid="uid://v5fj4x7u5u3g" path="res://FishingSpot.tscn" id="11_5jgk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5isq"]
 texture = ExtResource("4_r5aq0")
@@ -2100,3 +2101,6 @@ position = Vector2(592, 232)
 
 [node name="Bed" parent="." instance=ExtResource("3_d4kwv")]
 position = Vector2(744, 325)
+
+[node name="FishingSpot" parent="." instance=ExtResource("11_5jgk3")]
+position = Vector2(720, 288)
