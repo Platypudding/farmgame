@@ -19,12 +19,12 @@ func _input(_event):
 			isSleeping = true
 			get_node("/root/Level/Player/Camera2D/BlackScreen").fadein()
 			$bedtimesong.play()
-			Global.isTalking = true
-			print(Global.isTalking)
+			Global.isOccupied = true
+			print(Global.isOccupied)
 			await get_tree().create_timer(5).timeout
 			Global.day = Global.day + 1
 			get_node("/root/Level/Player/Camera2D/BlackScreen").fadeout()
 			await get_tree().create_timer(2).timeout
-			Global.isTalking = false
+			Global.isOccupied = false
 			isSleeping = false
 			

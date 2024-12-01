@@ -1,0 +1,6 @@
+join system (portrait) center
+if {fishname} == "trash":
+	system: You caught some {fishname}...
+	[end_timeline]
+system: You caught a {fishname}!
+[end_timeline]

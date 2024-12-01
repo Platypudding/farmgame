@@ -4,23 +4,25 @@ var day = 1
 var flowers = 0
 var shmoney = 0
 var seeds = 0
-var isTalking = false
+var isOccupied = false
 var callYN = false
 var voice
 var timeline = "test"
 var speaking = false 
 
 func talking(_event):
-	if !isTalking:
+	if !isOccupied:
 		Dialogic.timeline_ended.connect(_on_timeline_ended)
-		isTalking = true
+		isOccupied = true
+		speaking = true
 		Dialogic.start(timeline)
 		
 
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	isTalking = false
+	isOccupied = false
+	speaking = false
 	timeline = ""
 
 #func _on_timeline_ended():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ps55plxrlym3"]
 
-[ext_resource type="Script" path="res://bed.gd" id="1_qey27"]
+[ext_resource type="Script" path="res://Objects/bed/bed.gd" id="1_qey27"]
 [ext_resource type="Texture2D" uid="uid://t78oqt50mki8" path="res://art/Tiny Wonder Farm Free/objects&items/furniture free.png" id="2_3tdky"]
 [ext_resource type="AudioStream" uid="uid://c3x50hxaudvqh" path="res://art/audio/BedTime.wav" id="3_d53qr"]
 

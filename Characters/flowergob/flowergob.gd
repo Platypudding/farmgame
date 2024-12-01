@@ -1,8 +1,8 @@
 extends CharacterBody2D
 var is_reachable = false
 var player = null
-@export var seed: InvItem
-@export var flower: InvItem
+var seed = Itemlist.getItem("seed")
+var flower = Itemlist.getItem("flower") 
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
@@ -16,7 +16,7 @@ func _on_area_2d_body_exited(_body):
 
 
 func _input(_event):
-	if _event.is_action_pressed("Action Butt") and Global.isTalking == false and is_reachable: 
+	if _event.is_action_pressed("Action Butt") and Global.isOccupied == false and is_reachable: 
 		var flowercheck = player.check(flower)
 		var seedcheck = player.check(seed)
 
@@ -39,7 +39,6 @@ func _input(_event):
 			player.collect(seed, 5)
 	
 		else:
-			print(player.check(flower, 0))
 			Global.timeline = "res://Dialog/Characters/flowergob/flowergobDefault.dtl"
 			Global.talking(_event)
 			

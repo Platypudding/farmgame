@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://v5fj4x7u5u3g"]
+[gd_scene load_steps=7 format=3 uid="uid://v5fj4x7u5u3g"]
 
-[ext_resource type="Script" path="res://FishingSpot.gd" id="1_01cls"]
+[ext_resource type="Script" path="res://Objects/FishingSpot/FishingSpot.gd" id="1_01cls"]
 [ext_resource type="Texture2D" uid="uid://njv1lv2f1nv2" path="res://art/Objects/Fishing Spot.png" id="2_mj7do"]
-[ext_resource type="Resource" uid="uid://ntls2efmpx0v" path="res://inventory/items/Tuna.tres" id="2_plje4"]
-[ext_resource type="Resource" uid="uid://cmbrqqx4xr0gd" path="res://inventory/items/Catfish.tres" id="3_ggr7y"]
-[ext_resource type="Resource" uid="uid://hay8p1e6g5mc" path="res://inventory/items/Trash.tres" id="4_clnln"]
+[ext_resource type="AudioStream" uid="uid://cpdfrls8gpwd5" path="res://art/audio/MenuPop.wav" id="3_aj6tw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwtfa"]
 size = Vector2(16, 16)
@@ -25,9 +23,6 @@ size = Vector2(64, 16)
 
 [node name="FishingSpot" type="CharacterBody2D"]
 script = ExtResource("1_01cls")
-tuna = ExtResource("2_plje4")
-catfish = ExtResource("3_ggr7y")
-trash = ExtResource("4_clnln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hwtfa")
@@ -40,5 +35,11 @@ sprite_frames = SubResource("SpriteFrames_1h0dw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_3q6uu")
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aj6tw")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

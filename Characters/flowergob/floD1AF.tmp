@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://csdocgc4sd4h4"]
 
-[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://default_npc.tscn" id="1_u38se"]
-[ext_resource type="Script" path="res://flowergob.gd" id="2_3vdpb"]
+[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://Characters/default_npc.tscn" id="1_u38se"]
+[ext_resource type="Script" path="res://Characters/flowergob/flowergob.gd" id="2_3vdpb"]
 [ext_resource type="Texture2D" uid="uid://qal1yu8gju4i" path="res://art/flowergob.png" id="3_g5ylx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jryqo"]
@@ -23,8 +23,6 @@ animations = [{
 
 [node name="flowergob" instance=ExtResource("1_u38se")]
 script = ExtResource("2_3vdpb")
-seed = null
-flower = null
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -1.5)

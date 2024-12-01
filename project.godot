@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 Global="*res://Levels/Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Itemlist="*res://inventory/itemlist.tscn"
 
 [dialogic]
 
@@ -25,9 +26,11 @@ directories/dch_directory={
 "flowergob": "res://Dialog/Characters/flowergob/flowergob.dch",
 "fuckjohnson": "res://Dialog/Characters/fuck johnson/fuckjohnson.dch",
 "protaggy": "res://Dialog/Characters/protaggy/protaggy.dch",
-"spaceman": "res://Dialog/Characters/spaceman/spaceman.dch"
+"spaceman": "res://Dialog/Characters/spaceman/spaceman.dch",
+"system": "res://Dialog/Characters/System/system.dch"
 }
 directories/dtl_directory={
+"fishcaught": "res://Dialog/Fishing/fishcaught.dtl",
 "flowergobBuying": "res://Dialog/Characters/flowergob/flowergobBuying.dtl",
 "flowergobDefault": "res://Dialog/Characters/flowergob/flowergobDefault.dtl",
 "flowergobSelling": "res://Dialog/Characters/flowergob/flowergobSelling.dtl",
@@ -39,6 +42,7 @@ layout/style_list=["res://Dialog/Styles/style.tres"]
 layout/default_style="res://Dialog/Styles/style.tres"
 glossary/default_case_sensitive=true
 variables={
+"fishname": "",
 "tutorialized": false
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -76,8 +80,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Characters/": "orange",
 "res://Dialog/": "blue",
 "res://Levels/": "purple",
+"res://Objects/": "pink",
 "res://Player/": "teal",
 "res://art/": "yellow",
 "res://inventory/": "red"

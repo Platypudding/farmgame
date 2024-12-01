@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://6ofql3e54376"]
 
-[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://default_npc.tscn" id="1_ggshx"]
-[ext_resource type="Script" path="res://spaceman.gd" id="2_1n6d8"]
-[ext_resource type="Texture2D" uid="uid://bg4hsrqj65aju" path="res://art/charamter.png" id="2_so4pj"]
+[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://Characters/default_npc.tscn" id="1_ggshx"]
+[ext_resource type="Script" path="res://Characters/spaceman/spaceman.gd" id="2_1n6d8"]
+[ext_resource type="Texture2D" uid="uid://cb6hbgsqwsvhw" path="res://art/charamter.png" id="2_so4pj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55874"]
 size = Vector2(24, 26)
@@ -34,7 +34,6 @@ animations = [{
 
 [node name="spaceman" instance=ExtResource("1_ggshx")]
 script = ExtResource("2_1n6d8")
-text_queue = []
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_55874")

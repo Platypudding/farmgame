@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://csdocgc4sd4h4"]
+
+[ext_resource type="PackedScene" uid="uid://exsiw0er7nv8" path="res://Characters/default_npc.tscn" id="1_u38se"]
+[ext_resource type="Script" path="res://Characters/flowergob/flowergob.gd" id="2_3vdpb"]
+[ext_resource type="Texture2D" uid="uid://qal1yu8gju4i" path="res://art/flowergob.png" id="3_g5ylx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jryqo"]
+size = Vector2(16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffq35"]
+size = Vector2(28, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a052b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g5ylx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="flowergob" instance=ExtResource("1_u38se")]
+script = ExtResource("2_3vdpb")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_jryqo")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ffq35")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(0, -1)
+scale = Vector2(1.04934, 0.987658)
+sprite_frames = SubResource("SpriteFrames_a052b")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

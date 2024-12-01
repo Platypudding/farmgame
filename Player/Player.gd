@@ -74,7 +74,7 @@ func elevate():
 			self.set_collision_mask(baseLayer)
 
 func _physics_process(_delta):
-	if Global.isTalking == true:
+	if Global.isOccupied == true:
 		if flipHorizontal:
 			gal.play("idleright")
 			gal.speed_scale = 1
@@ -82,7 +82,7 @@ func _physics_process(_delta):
 			gal.play("idleleft")
 			gal.speed_scale = 1
 
-	if Global.isTalking == false:
+	if Global.isOccupied == false:
 		get_input()
 		move_and_slide()
 		elevate()

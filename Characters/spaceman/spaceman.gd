@@ -1,9 +1,10 @@
 extends CharacterBody2D
 var is_reachable = false
-
+var player = null
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		player = body
 		is_reachable = true
 	
 	
