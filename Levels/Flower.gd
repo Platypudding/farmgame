@@ -12,7 +12,12 @@ var isSown = false
 
 func _process(_delta):
 	if (Global.day > localDays) and isSown:
-		phase = phase + 1
+		var weather_modifier: float = Global.get_weather_effect("growth_modifier")
+		
+		# Chance-based growth with weather influence
+		if randf() < weather_modifier:
+			phase = phase + 1
+		
 		localDays = Global.day
 	
 	if(phase == 1):

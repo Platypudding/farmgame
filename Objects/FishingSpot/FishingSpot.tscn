@@ -1,17 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://v5fj4x7u5u3g"]
+[gd_scene load_steps=12 format=3 uid="uid://v5fj4x7u5u3g"]
 
 [ext_resource type="Script" path="res://Objects/FishingSpot/FishingSpot.gd" id="1_01cls"]
 [ext_resource type="Texture2D" uid="uid://njv1lv2f1nv2" path="res://art/Objects/Fishing Spot.png" id="2_mj7do"]
 [ext_resource type="AudioStream" uid="uid://cpdfrls8gpwd5" path="res://art/audio/MenuPop.wav" id="3_aj6tw"]
+[ext_resource type="AudioStream" uid="uid://bcnftb48o5hua" path="res://art/audio/splash1.wav" id="4_ftmaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwtfa"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkhkj"]
+atlas = ExtResource("2_mj7do")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofmfc"]
+atlas = ExtResource("2_mj7do")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eu1t"]
+atlas = ExtResource("2_mj7do")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dyyk"]
+atlas = ExtResource("2_mj7do")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1h0dw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mj7do")
+"texture": SubResource("AtlasTexture_bkhkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofmfc")
+}],
+"loop": true,
+"name": &"BobberFloat",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eu1t")
+}],
+"loop": true,
+"name": &"FishOnHook",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dyyk")
 }],
 "loop": true,
 "name": &"default",
@@ -27,8 +63,10 @@ script = ExtResource("1_01cls")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hwtfa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1h0dw")
+animation = &"BobberFloat"
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -37,8 +75,11 @@ shape = SubResource("RectangleShape2D_3q6uu")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AlertSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_aj6tw")
+
+[node name="SplashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ftmaw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

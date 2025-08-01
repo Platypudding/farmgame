@@ -2079,7 +2079,7 @@ position = Vector2(824, 568)
 
 [node name="Player" parent="." instance=ExtResource("2_bgow7")]
 process_mode = 1
-position = Vector2(1043, 338)
+position = Vector2(584, 332)
 collision_priority = 0.0
 motion_mode = 1
 
@@ -2087,13 +2087,22 @@ motion_mode = 1
 position = Vector2(680, 303)
 
 [node name="fuck johnson" parent="." instance=ExtResource("9_4edia")]
-position = Vector2(512, 248)
+position = Vector2(280, 16)
 
 [node name="spaceman" parent="." instance=ExtResource("7_a5gs8")]
-position = Vector2(560, 248)
+position = Vector2(1096, 96)
 
 [node name="FishingSpot" parent="." instance=ExtResource("9_y4jim")]
-position = Vector2(1126, 335)
+position = Vector2(1134, 256)
 
 [node name="flowergob" parent="." instance=ExtResource("6_w58ac")]
 position = Vector2(632, 232)
+
+[node name="FishingSpot2" parent="." instance=ExtResource("9_y4jim")]
+position = Vector2(168, 544)
+
+[node name="FishingSpot3" parent="." instance=ExtResource("9_y4jim")]
+position = Vector2(344, 80)
+
+[node name="FishingSpot4" parent="." instance=ExtResource("9_y4jim")]
+position = Vector2(-24, 288)

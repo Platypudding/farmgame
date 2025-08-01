@@ -2,6 +2,7 @@ extends CharacterBody2D
 var is_reachable = false
 var fishonline = false
 var isfishing = true
+var missedfish = false
 var player = null
 var fishnumber = null
 var randomfish = null
@@ -33,9 +34,11 @@ func _input(_event):
 			Global.isOccupied = false
 			$Timer.stop()
 			fishonline = false
+			$Sprite.play("default")
 			Dialogic.VAR.fishname = randomfish
 			Global.timeline = "res://Dialog/Fishing/fishcaught.dtl"
 			Global.talking(_event)
+			missedfish = false
 			
 			
 				
@@ -44,11 +47,17 @@ func _input(_event):
 			print("timer stopped")
 			Global.isOccupied = false
 			isfishing = false
+			$Sprite.play("default")
+			missedfish = false
+
 func fishing():	
+	if !missedfish:
+		$SplashSound.play()
+	$Sprite.play("BobberFloat")
 	rng.randomize()
 	fishnumber = rng.randi_range(2,4) #the current fish item numbers range from 2 to 4. this picks one of their item numbers.
+	#determines how long the player will wait before the fish bites
 	waitrarity = rng.randi_range(0,100)
-	
 	if waitrarity == 1: #instant, 1 second or less
 		waittime = rng.randf_range(0,1)
 		print("instant wait")
@@ -64,6 +73,8 @@ func fishing():
 	elif waitrarity == 100: #glacial, 30 seconds to 90 seconds
 		waittime = rng.randf_range(30,90)
 		print("glacial wait")
+	
+	
 		
 	$Timer.start(waittime)
 	isfishing = true
@@ -71,13 +82,15 @@ func fishing():
 
 func _on_timer_timeout() -> void:
 	if !fishonline:
+		$Sprite.play("FishOnHook")
 		$Timer.start(0.5)
 		fishonline = true
-		$AudioStreamPlayer.play()
+		$AlertSound.play()
 	
 	elif fishonline:
 		print("missed your window buster")
 		fishonline = false
+		missedfish = true
 		fishing()
 func waitraritytest(int):
 	var instant = 0
