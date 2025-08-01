@@ -8,3 +8,4 @@ script = ExtResource("1_apb1f")
 name = "Catfish"
 texture = ExtResource("2_vrb8d")
 itemnum = 201
+allowed_weather = Array[String](["rainy"])

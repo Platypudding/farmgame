@@ -8,7 +8,8 @@ extends Node2D
 	"flower": 1,
 	"trash": 2,
 	"tuna": 3,
-	"catfish": 4
+	"catfish": 4,
+	"zebrafish": 5
 }
 
 func getItem(item):

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://byf6dvm2ssa4o"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_zebrafish"]
+[ext_resource type="Texture2D" uid="uid://xjerlj0m18p0" path="res://art/item sprites/inventory zebrafish.png" id="2_277lm"]
+
+[resource]
+script = ExtResource("1_zebrafish")
+name = "Zebrafish"
+texture = ExtResource("2_277lm")
+itemnum = 202
+allowed_weather = Array[String](["sunny"])

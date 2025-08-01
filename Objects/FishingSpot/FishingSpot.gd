@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 var totaltuna = 0
 var totaltrash = 0
 var totalcatfish = 0
+var totalzebrafish = 0
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
@@ -55,7 +56,17 @@ func fishing():
 		$SplashSound.play()
 	$Sprite.play("BobberFloat")
 	rng.randomize()
-	fishnumber = rng.randi_range(2,4) #the current fish item numbers range from 2 to 4. this picks one of their item numbers.
+	
+	# Get available fish based on current weather
+	var available_fish = get_available_fish()
+	print("Current weather: ", Global.current_weather)
+	print("Available fish IDs: ", available_fish)
+	
+	if available_fish.is_empty():
+		# Fallback to trash if no fish available (shouldn't happen)
+		fishnumber = 2
+	else:
+		fishnumber = available_fish[rng.randi() % available_fish.size()]
 	#determines how long the player will wait before the fish bites
 	waitrarity = rng.randi_range(0,100)
 	if waitrarity == 1: #instant, 1 second or less
@@ -126,3 +137,21 @@ func waitraritytest(int):
 	print("Average: ", average)
 	print("Slow: ", slow)
 	print("Glacial: ", glacial)
+
+func get_available_fish() -> Array[int]:
+	var available_fish: Array[int] = []
+	
+	# Check each fish item (2-5 are fish items)
+	for fish_id in range(2, 6):
+		var fish_name = Itemlist.listofitems.find_key(fish_id)
+		if fish_name != null:
+			var fish_item = Itemlist.getItem(fish_name)
+			print("Fish: ", fish_name, " (ID: ", fish_id, ") - Allowed weather: ", fish_item.allowed_weather)
+			# If allowed_weather is empty or contains current weather, fish is available
+			if fish_item.allowed_weather.is_empty() or Global.current_weather in fish_item.allowed_weather:
+				available_fish.append(fish_id)
+				print("  -> AVAILABLE")
+			else:
+				print("  -> NOT AVAILABLE")
+	
+	return available_fish

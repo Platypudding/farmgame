@@ -8,3 +8,4 @@ script = ExtResource("1_lmpfi")
 name = "Tuna"
 texture = ExtResource("2_4va6a")
 itemnum = 200
+allowed_weather = Array[String](["sunny", "rainy"])

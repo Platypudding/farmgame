@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://blkdx1jpquybo"]
+[gd_scene load_steps=9 format=3 uid="uid://blkdx1jpquybo"]
 
 [ext_resource type="Script" path="res://inventory/itemlist.gd" id="1_o55t5"]
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="2_keav8"]
@@ -7,7 +7,8 @@
 [ext_resource type="Resource" uid="uid://hay8p1e6g5mc" path="res://inventory/items/Trash.tres" id="5_hwklv"]
 [ext_resource type="Resource" uid="uid://ntls2efmpx0v" path="res://inventory/items/Tuna.tres" id="6_dqmp5"]
 [ext_resource type="Resource" uid="uid://cmbrqqx4xr0gd" path="res://inventory/items/Catfish.tres" id="7_22v5q"]
+[ext_resource type="Resource" uid="uid://byf6dvm2ssa4o" path="res://inventory/items/Zebrafish.tres" id="8_vr8jy"]
 
 [node name="itemlist" type="Node2D"]
 script = ExtResource("1_o55t5")
-itemresources = Array[ExtResource("2_keav8")]([ExtResource("3_3xc3c"), ExtResource("4_eq7o3"), ExtResource("5_hwklv"), ExtResource("6_dqmp5"), ExtResource("7_22v5q")])
+itemresources = Array[ExtResource("2_keav8")]([ExtResource("3_3xc3c"), ExtResource("4_eq7o3"), ExtResource("5_hwklv"), ExtResource("6_dqmp5"), ExtResource("7_22v5q"), ExtResource("8_vr8jy")])
