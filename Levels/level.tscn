@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmeu2e4hrb1gu"]
+[gd_scene load_steps=14 format=3 uid="uid://dmeu2e4hrb1gu"]
 
 [ext_resource type="Script" path="res://Levels/Global.gd" id="1_qp04q"]
+[ext_resource type="Script" path="res://Levels/RainManager.gd" id="1_rain_manager"]
 [ext_resource type="PackedScene" uid="uid://bnk3cijpn36nc" path="res://Player/Player.tscn" id="2_bgow7"]
 [ext_resource type="PackedScene" uid="uid://ps55plxrlym3" path="res://Objects/bed/bed.tscn" id="3_d4kwv"]
+[ext_resource type="AudioStream" uid="uid://dlw0c36u8j07a" path="res://art/audio/rain.wav" id="3_o81u6"]
 [ext_resource type="PackedScene" uid="uid://j5s3mk2stl7m" path="res://Levels/Flower.tscn" id="3_u6e66"]
 [ext_resource type="Texture2D" uid="uid://cteqr2j68m1es" path="res://art/full version/tiles/tiles.png" id="4_r5aq0"]
 [ext_resource type="PackedScene" uid="uid://csdocgc4sd4h4" path="res://Characters/flowergob/flowergob.tscn" id="6_w58ac"]
@@ -1720,6 +1722,13 @@ sources/1 = SubResource("TileSetAtlasSource_c5isq")
 process_mode = 3
 script = ExtResource("1_qp04q")
 
+[node name="RainManager" type="Node" parent="."]
+script = ExtResource("1_rain_manager")
+
+[node name="RainAudioPlayer" type="AudioStreamPlayer" parent="RainManager"]
+stream = ExtResource("3_o81u6")
+volume_db = -3.031
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1, 0.981001)
 tile_set = SubResource("TileSet_hohvb")
@@ -2079,7 +2088,7 @@ position = Vector2(824, 568)
 
 [node name="Player" parent="." instance=ExtResource("2_bgow7")]
 process_mode = 1
-position = Vector2(584, 332)
+position = Vector2(584, 368)
 collision_priority = 0.0
 motion_mode = 1
 

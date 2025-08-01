@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bnk3cijpn36nc"]
+[gd_scene load_steps=39 format=3 uid="uid://bnk3cijpn36nc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_6jrx1"]
 [ext_resource type="Texture2D" uid="uid://cu42xexwm4rvu" path="res://art/Tiny Wonder Farm Free/characters/main character/wizardlywalking.png" id="2_kq7tr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/shmoneycount.gd" id="4_rx4xc"]
 [ext_resource type="Script" path="res://Player/BlackScreen.gd" id="7_fqlr7"]
 [ext_resource type="Script" path="res://Player/inv_ui.gd" id="8_8pxyn"]
+[ext_resource type="Script" path="res://Levels/WeatherDisplay.gd" id="9_weather"]
 [ext_resource type="Texture2D" uid="uid://bj1lluidtcey2" path="res://art/UIStuffs/GUI/GUI_2x.png" id="10_fadkq"]
 [ext_resource type="Texture2D" uid="uid://e6mreka7yq4s" path="res://art/full version/ui/topleftboxxy.png" id="11_2p4t5"]
 [ext_resource type="PackedScene" uid="uid://cr8qeyu71pb1t" path="res://inventory/inv_ui_slot.tscn" id="11_c1q01"]
@@ -258,6 +259,15 @@ offset_top = -223.0
 offset_right = 400.0
 offset_bottom = 212.0
 script = ExtResource("7_fqlr7")
+
+[node name="WeatherDisplay" type="Label" parent="Camera2D"]
+offset_left = -285.0
+offset_top = -171.0
+offset_right = -140.0
+offset_bottom = -148.0
+theme_override_font_sizes/font_size = 12
+text = "Weather Loading..."
+script = ExtResource("9_weather")
 
 [node name="infoui" type="MarginContainer" parent="Camera2D"]
 offset_left = 196.0
