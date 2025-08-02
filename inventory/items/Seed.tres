@@ -8,3 +8,4 @@ script = ExtResource("1_dhn81")
 name = "Seed"
 texture = ExtResource("2_u2v52")
 itemnum = 0
+allowed_weather = Array[String]([])
