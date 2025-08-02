@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bqy8j5x4wn8lq"]
+
+[ext_resource type="Shader" path="res://shaders/rain_shader.gdshader" id="1_rain_shader"]
+
+[resource]
+shader = ExtResource("1_rain_shader")
+shader_parameter/rain_density = 289.66
+shader_parameter/rain_speed = 0.5
+shader_parameter/drop_length = 0.05
+shader_parameter/rain_color = Color(0.0980392, 0.466667, 0.878431, 0.713726)

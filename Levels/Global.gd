@@ -51,6 +51,13 @@ func update_weather():
 		# Always emit weather signal and print weather status for each new day
 		weather_changed.emit(current_weather)
 		print("Day %d: Today's weather is %s" % [day, current_weather])
+
+# Debug function to force weather change (useful for testing)
+func force_weather(weather_type: String):
+	if weather_type in weather_types:
+		current_weather = weather_type
+		weather_changed.emit(current_weather)
+		print("DEBUG: Forced weather to %s" % current_weather)
 		
 
 func get_weather_effect(effect_type: String) -> float:
