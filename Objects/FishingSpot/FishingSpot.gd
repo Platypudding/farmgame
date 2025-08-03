@@ -14,6 +14,8 @@ var totaltuna = 0
 var totaltrash = 0
 var totalcatfish = 0
 var totalzebrafish = 0
+@export var location = ""
+
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
@@ -57,9 +59,9 @@ func fishing():
 	$Sprite.play("BobberFloat")
 	rng.randomize()
 	
-	# Get available fish based on current weather
+	# Get available fish based on current weather and location
 	var available_fish = get_available_fish()
-	print("Current weather: ", Global.current_weather)
+	print("Current weather: ", Global.current_weather, " | Fishing location: ", location)
 	print("Available fish IDs: ", available_fish)
 	
 	if available_fish.is_empty():
@@ -146,12 +148,19 @@ func get_available_fish() -> Array[int]:
 		var fish_name = Itemlist.listofitems.find_key(fish_id)
 		if fish_name != null:
 			var fish_item = Itemlist.getItem(fish_name)
-			print("Fish: ", fish_name, " (ID: ", fish_id, ") - Allowed weather: ", fish_item.allowed_weather)
-			# If allowed_weather is empty or contains current weather, fish is available
-			if fish_item.allowed_weather.is_empty() or Global.current_weather in fish_item.allowed_weather:
+			print("Fish: ", fish_name, " (ID: ", fish_id, ") - Weather: ", fish_item.allowed_weather, " - Locations: ", fish_item.findable_location)
+			
+			# Check weather availability
+			var weather_ok = fish_item.allowed_weather.is_empty() or Global.current_weather in fish_item.allowed_weather
+			
+			# Check location availability
+			var location_ok = fish_item.findable_location.is_empty() or location in fish_item.findable_location
+			
+			# Fish is available if both weather and location conditions are met
+			if weather_ok and location_ok:
 				available_fish.append(fish_id)
-				print("  -> AVAILABLE")
+				print("  -> AVAILABLE (weather: ", weather_ok, ", location: ", location_ok, ")")
 			else:
-				print("  -> NOT AVAILABLE")
+				print("  -> NOT AVAILABLE (weather: ", weather_ok, ", location: ", location_ok, ")")
 	
 	return available_fish

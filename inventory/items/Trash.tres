@@ -9,3 +9,4 @@ name = "Trash"
 texture = ExtResource("2_ouqtd")
 itemnum = 202
 allowed_weather = Array[String](["sunny", "rainy"])
+findable_location = Array[String](["river", "ocean"])

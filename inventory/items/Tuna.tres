@@ -9,3 +9,4 @@ name = "Tuna"
 texture = ExtResource("2_4va6a")
 itemnum = 200
 allowed_weather = Array[String](["sunny", "rainy"])
+findable_location = Array[String](["ocean"])

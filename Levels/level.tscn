@@ -2108,17 +2108,23 @@ position = Vector2(280, 16)
 [node name="spaceman" parent="." instance=ExtResource("7_a5gs8")]
 position = Vector2(1096, 96)
 
-[node name="FishingSpot" parent="." instance=ExtResource("9_y4jim")]
-position = Vector2(1134, 256)
-
 [node name="flowergob" parent="." instance=ExtResource("6_w58ac")]
 position = Vector2(632, 232)
 
-[node name="FishingSpot2" parent="." instance=ExtResource("9_y4jim")]
+[node name="Fishing Spots" type="Node" parent="."]
+
+[node name="FishingSpot2" parent="Fishing Spots" instance=ExtResource("9_y4jim")]
 position = Vector2(168, 544)
+location = "river"
 
-[node name="FishingSpot3" parent="." instance=ExtResource("9_y4jim")]
+[node name="FishingSpot3" parent="Fishing Spots" instance=ExtResource("9_y4jim")]
 position = Vector2(344, 80)
+location = "river"
 
-[node name="FishingSpot4" parent="." instance=ExtResource("9_y4jim")]
+[node name="FishingSpot4" parent="Fishing Spots" instance=ExtResource("9_y4jim")]
 position = Vector2(-24, 288)
+location = "ocean"
+
+[node name="FishingSpot" parent="Fishing Spots" instance=ExtResource("9_y4jim")]
+position = Vector2(1134, 256)
+location = "ocean"
