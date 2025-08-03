@@ -24,7 +24,7 @@ func _input(_event):
 			await get_tree().create_timer(5).timeout
 			Global.day = Global.day + 1
 			Global.update_weather()
-			get_node("/root/Level/Player/Camera2D/BlackScreen").fadeout()
+			get_node("/root/Level/Player/Camera2D/BlackScreen").fadeout_to_weather()
 			await get_tree().create_timer(2).timeout
 			Global.isOccupied = false
 			isSleeping = false

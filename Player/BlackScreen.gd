@@ -23,6 +23,11 @@ func fadeout() -> void:
 	maketween()
 	tween.tween_property(self, "modulate:a", 0, 2)
 
+func fadeout_to_weather() -> void:
+	maketween()
+	var target_opacity := rain_dimming_opacity if Global.current_weather == "rainy" else 0.0
+	tween.tween_property(self, "modulate:a", target_opacity, 2)
+
 func _on_weather_changed(new_weather: String) -> void:
 	_update_weather_dimming(new_weather)
 
