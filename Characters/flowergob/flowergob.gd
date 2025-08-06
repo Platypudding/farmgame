@@ -2,7 +2,23 @@ extends CharacterBody2D
 var is_reachable = false
 var player = null
 var seed = Itemlist.getItem("seed")
-var flower = Itemlist.getItem("flower") 
+var flower = Itemlist.getItem("flower")
+
+@onready var scheduler = $NPCScheduler
+
+func _ready():
+	# Set up flowergob's daily schedule
+	setup_schedule()
+
+func setup_schedule():
+	if scheduler:
+		# Morning: 
+		scheduler.add_schedule_entry(8, 30, Vector2(1000, 200))  
+		
+		# Afternoon: 
+		scheduler.add_schedule_entry(14, 0, Vector2(631.5, 232.5))  
+		
+		print("Flowergob schedule set up with ", scheduler.daily_schedule.size(), " entries")
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
