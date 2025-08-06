@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bnk3cijpn36nc"]
+[gd_scene load_steps=40 format=3 uid="uid://bnk3cijpn36nc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_6jrx1"]
 [ext_resource type="Texture2D" uid="uid://cu42xexwm4rvu" path="res://art/Tiny Wonder Farm Free/characters/main character/wizardlywalking.png" id="2_kq7tr"]
@@ -7,9 +7,10 @@
 [ext_resource type="Script" path="res://Player/BlackScreen.gd" id="7_fqlr7"]
 [ext_resource type="Script" path="res://Player/inv_ui.gd" id="8_8pxyn"]
 [ext_resource type="Script" path="res://Levels/WeatherDisplay.gd" id="9_weather"]
-[ext_resource type="Texture2D" uid="uid://bj1lluidtcey2" path="res://art/UIStuffs/GUI/GUI_2x.png" id="10_fadkq"]
-[ext_resource type="Texture2D" uid="uid://e6mreka7yq4s" path="res://art/full version/ui/topleftboxxy.png" id="11_2p4t5"]
-[ext_resource type="PackedScene" uid="uid://cr8qeyu71pb1t" path="res://inventory/inv_ui_slot.tscn" id="11_c1q01"]
+[ext_resource type="Script" path="res://Player/ClockDisplay.gd" id="10_clock"]
+[ext_resource type="Texture2D" uid="uid://bj1lluidtcey2" path="res://art/UIStuffs/GUI/GUI_2x.png" id="11_fadkq"]
+[ext_resource type="Texture2D" uid="uid://e6mreka7yq4s" path="res://art/full version/ui/topleftboxxy.png" id="12_2p4t5"]
+[ext_resource type="PackedScene" uid="uid://cr8qeyu71pb1t" path="res://inventory/inv_ui_slot.tscn" id="13_c1q01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0a2b6"]
 radius = 12.0
@@ -261,13 +262,22 @@ offset_bottom = 212.0
 script = ExtResource("7_fqlr7")
 
 [node name="WeatherDisplay" type="Label" parent="Camera2D"]
-offset_left = -285.0
-offset_top = -171.0
-offset_right = -140.0
-offset_bottom = -148.0
+offset_left = -286.0
+offset_top = -152.828
+offset_right = -141.0
+offset_bottom = -129.828
 theme_override_font_sizes/font_size = 12
 text = "Weather Loading..."
 script = ExtResource("9_weather")
+
+[node name="ClockDisplay" type="Label" parent="Camera2D"]
+offset_left = -288.0
+offset_top = -172.717
+offset_right = -203.0
+offset_bottom = -149.717
+theme_override_font_sizes/font_size = 14
+text = "6:00 AM"
+script = ExtResource("10_clock")
 
 [node name="infoui" type="MarginContainer" parent="Camera2D"]
 offset_left = 196.0
@@ -278,7 +288,7 @@ theme_type_variation = &"type"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/infoui"]
 layout_mode = 2
-texture = ExtResource("11_2p4t5")
+texture = ExtResource("12_2p4t5")
 
 [node name="shmoneycount" type="Label" parent="Camera2D/infoui/NinePatchRect"]
 z_index = 1
@@ -319,7 +329,7 @@ offset_left = -232.0
 offset_top = 129.799
 offset_right = 232.0
 offset_bottom = 165.799
-texture = ExtResource("10_fadkq")
+texture = ExtResource("11_fadkq")
 region_rect = Rect2(194, 98, 28, 28)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -344,32 +354,32 @@ theme_override_constants/h_separation = 47
 theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="inv_UI_slot" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot2" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot2" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot3" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot3" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot4" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot4" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot5" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot5" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot6" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot6" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot7" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot7" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot8" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot8" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot9" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot9" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2
 
-[node name="inv_UI_slot10" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("11_c1q01")]
+[node name="inv_UI_slot10" parent="Camera2D/Inv_UI/NinePatchRect/GridContainer" instance=ExtResource("13_c1q01")]
 layout_mode = 2

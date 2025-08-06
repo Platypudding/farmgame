@@ -35,6 +35,7 @@ func _input(_event):
 			fishitem = Itemlist.getItem(randomfish) #grabs the actual item corresponding to the fish key
 			player.collect(fishitem, 1)
 			Global.isOccupied = false
+			Global.isFishing = false
 			$Timer.stop()
 			fishonline = false
 			$Sprite.play("default")
@@ -49,6 +50,7 @@ func _input(_event):
 			$Timer.stop()
 			print("timer stopped")
 			Global.isOccupied = false
+			Global.isFishing = false
 			isfishing = false
 			$Sprite.play("default")
 			missedfish = false
@@ -92,6 +94,7 @@ func fishing():
 	$Timer.start(waittime)
 	isfishing = true
 	Global.isOccupied = true
+	Global.isFishing = true  # Allow time to continue during fishing
 
 func _on_timer_timeout() -> void:
 	if !fishonline:
