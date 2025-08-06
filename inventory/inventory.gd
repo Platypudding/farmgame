@@ -24,11 +24,6 @@ func remove(item: InvItem, amount: int):
 	if !itemslots.is_empty():
 		itemslots[0].amount -= amount
 		
-		
-	else:
-		var emptyslots = slots.filter(func(slot): return slot.item == null)
-		if !emptyslots.is_empty():
-			emptyslots[0].amount -= amount 
 
 	update.emit()
 	
