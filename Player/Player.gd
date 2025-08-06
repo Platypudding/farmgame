@@ -91,8 +91,8 @@ func _physics_process(_delta):
 func collect(item, amount):
 	inv.insert(item, amount)
 	
-func remove(item, amount):
-	inv.remove(item, amount)
+func remove(item, amount) -> bool:
+	return inv.remove(item, amount)
 	
 func check(item):
 	return inv.check(item)

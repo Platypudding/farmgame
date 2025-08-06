@@ -20,7 +20,8 @@ var last_weather_day: int = 0
 
 func talking(_event):
 	if !isOccupied:
-		Dialogic.timeline_ended.connect(_on_timeline_ended)
+		# One-shot connection - automatically disconnects after first call
+		Dialogic.timeline_ended.connect(_on_timeline_ended, CONNECT_ONE_SHOT)
 		isOccupied = true
 		speaking = true
 		Dialogic.start(timeline)
@@ -28,17 +29,10 @@ func talking(_event):
 
 
 func _on_timeline_ended():
-	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+	# No manual disconnection needed - CONNECT_ONE_SHOT handles it automatically
 	isOccupied = false
 	speaking = false
 	timeline = ""
-
-#func _on_timeline_ended():
-#	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-#	isTalking = false
-#	get_tree().paused = false
-#	timeline = ""
-#	print("talking end")
 
 # Weather system functions
 func update_weather():

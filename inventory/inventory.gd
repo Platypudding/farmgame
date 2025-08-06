@@ -19,13 +19,24 @@ func insert(item: InvItem, amount: int):
 			
 	update.emit()
 
-func remove(item: InvItem, amount: int):
+func remove(item: InvItem, amount: int) -> bool:
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	if !itemslots.is_empty():
-		itemslots[0].amount -= amount
-		
-
-	update.emit()
+		var slot = itemslots[0]
+		if slot.amount >= amount:
+			slot.amount -= amount
+			if slot.amount <= 0:
+				slot.item = null  # Clear empty slot
+				slot.amount = 0
+			update.emit()
+			return true  # Success
+		else:
+			# Not enough items - remove what's available
+			slot.amount = 0
+			slot.item = null
+			update.emit()
+			return false  # Partial removal - caller should handle this
+	return false  # Item not found
 	
 func check(item: InvItem) :
 	var itemslots = slots.filter(func(slot): return slot.item == item)
