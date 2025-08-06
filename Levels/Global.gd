@@ -46,7 +46,7 @@ func _on_timeline_ended():
 # Weather system functions
 func update_weather():
 	if day != last_weather_day:
-		var old_weather = current_weather
+		var _old_weather = current_weather
 		# 50/50 chance between sunny and rainy
 		current_weather = "sunny" if randf() < 0.5 else "rainy"
 		last_weather_day = day
@@ -62,10 +62,6 @@ func force_weather(weather_type: String):
 		weather_changed.emit(current_weather)
 		print("DEBUG: Forced weather to %s" % current_weather)
 		
-
-func get_weather_effect(effect_type: String) -> float:
-	# No gameplay effects - always return default growth rate
-	return 1.0
 
 func get_weather_description() -> String:
 	match current_weather:
