@@ -12,13 +12,14 @@ func _ready():
 
 func setup_schedule():
 	if scheduler:
-		# Morning: 
-		scheduler.add_schedule_entry(8, 30, Vector2(1000, 200))  
+		# Convert world coordinates to tile coordinates (world_pos / 16)
+		# Morning: Vector2(1000, 200) ≈ tile (62, 12)
+		scheduler.add_schedule_entry(8, 30, Vector2i(62, 12))  
 		
-		# Afternoon: 
-		scheduler.add_schedule_entry(14, 0, Vector2(631.5, 232.5))  
+		# Afternoon: Vector2(631.5, 232.5) ≈ tile (39, 14) 
+		scheduler.add_schedule_entry(14, 0, Vector2i(39, 14))  
 		
-		print("Flowergob schedule set up with ", scheduler.daily_schedule.size(), " entries")
+		print("Flowergob schedule set up with ", scheduler.daily_schedule.size(), " entries (tile-based)")
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
