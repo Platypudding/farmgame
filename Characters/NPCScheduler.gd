@@ -55,8 +55,12 @@ func _ready():
 	# Note: Initial schedule check will be triggered after schedule entries are added
 
 func _physics_process(delta: float):
-	if is_moving and npc_body:
+	if is_moving and npc_body and not Global.isOccupied:
 		_move_towards_target(delta)
+	elif is_moving and Global.isOccupied:
+		# Pause movement during dialogue - keep NPC stationary
+		npc_body.velocity = Vector2.ZERO
+		npc_body.move_and_slide()
 
 func _find_tilemap_and_waypoint_manager():
 	# Look for tilemap in scene tree

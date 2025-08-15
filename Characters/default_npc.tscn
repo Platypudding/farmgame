@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://exsiw0er7nv8"]
+[gd_scene load_steps=3 format=3 uid="uid://exsiw0er7nv8"]
 
 [ext_resource type="Script" path="res://Characters/default_npc.gd" id="1_avnqk"]
+[ext_resource type="Script" path="res://Characters/NPCScheduler.gd" id="2_scheduler"]
 
 [node name="defaultNPC" type="CharacterBody2D"]
 script = ExtResource("1_avnqk")
@@ -12,3 +13,10 @@ script = ExtResource("1_avnqk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="NPCScheduler" type="Node" parent="."]
+script = ExtResource("2_scheduler")
+movement_speed = 50.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
